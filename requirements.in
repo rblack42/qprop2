@@ -1,0 +1,13 @@
+# documentation
+jupyter-book
+sphinx-autodoc-typehints
+git+https://github.com/mkrphys/ipython-tikzmagic.git
+
+# fortran doc support
+sphinx-fortran
+fortran-magic
+
+# QPROP dependencies
+pint
+numpy
+matplotlib

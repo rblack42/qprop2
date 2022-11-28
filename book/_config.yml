@@ -1,0 +1,62 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: QProp - f90 Edition
+author: Roie R. Black
+copyright: "2022"
+logo: assets/images/lpp.gif
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: force
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - assets/references.bib
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/rblack42/math-magik-qprop
+  path_to_book: book
+  branch: master
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+
+sphinx:
+  extra_extensions:
+    - sphinx.ext.viewcode
+    - sphinx.ext.napoleon
+    - sphinx.ext.autodoc
+    - sphinxfortran.fortran_domain
+    - sphinxfortran.fortran_autodoc
+    - sphinx_autodoc_typehints
+    - sphinx.ext.autosummary
+
+  config:
+    autosummary_generate: True
+    autosummary_imported_members: True
+    autodoc_default_options:
+      special-members: False
+      undoc-members: True
+      show-inheritance: True
+      html_theme: furo
+      intersphinx_mapping:
+        python:
+          - "https://docs.python.org/3"
+          - null
+        sphinx:
+          - "http://www.sphinx-doc.org/en/stable"
+          - null
+        sphinxfortran:
+          - "http://sphinx-fortran.readthedocs.io/en/latest/"
+          - null
+      pygments_style: "material"
+
