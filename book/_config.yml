@@ -41,6 +41,17 @@ sphinx:
     - sphinx.ext.autosummary
   config:
     autosummary_generate: True
+    autodoc_default_options:
+      special-members: False
+      undoc-members: True
+      show-inheritance: True
+      html_theme: furo
+      intersphinx_mapping:
+        python:
+          - "https://docs.python.org/3"
+          - null
+        pygments_style: "material"
+
     fortran_ext: 
       - 'f90'
     fortran_src: 

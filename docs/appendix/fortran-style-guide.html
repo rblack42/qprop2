@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. API &#8212; QProp - f90 Edition</title>
+    <title>2. Fortran Style Guide &#8212; QProp - f90 Edition</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Fortran Style Guide" href="../appendix/fortran-style-guide.html" />
-    <link rel="prev" title="Qprop2 - Modern Fortran Implementation" href="../introduction.html" />
+    <link rel="next" title="3. Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="1. API" href="../content/api.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -114,13 +114,13 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../content/api.html">
    1. API
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../appendix/fortran-style-guide.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    2. Fortran Style Guide
   </a>
  </li>
@@ -180,6 +180,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/rblack42/math-magik-qprop/master?urlpath=tree/book/appendix/fortran-style-guide.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -219,7 +248,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/rblack42/math-magik-qprop/issues/new?title=Issue%20on%20page%20%2Fcontent/api.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/rblack42/math-magik-qprop/issues/new?title=Issue%20on%20page%20%2Fappendix/fortran-style-guide.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -247,7 +276,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/content/api.rst"
+        <a href="../_sources/appendix/fortran-style-guide.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -258,7 +287,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.rst</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -307,33 +336,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#qprop2">
-   1.1. Qprop2
+  <a class="reference internal nav-link" href="#naming-conventions">
+   2.1. Naming Conventions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loader">
-   1.2. Loader
+  <a class="reference internal nav-link" href="#subroutine-arguments">
+   2.2. Subroutine Arguments
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#m-propeller">
-   1.3. m_Propeller
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#d-prop-data">
-   1.4. d_prop_data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#m-motor">
-   1.5. m_Motor
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#d-motor-data">
-   1.6. d_motor_data
+  <a class="reference internal nav-link" href="#array-dimensions">
+   2.3. Array Dimensions
   </a>
  </li>
 </ul>
@@ -345,7 +359,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>API</h1>
+                <h1>Fortran Style Guide</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -356,33 +370,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#qprop2">
-   1.1. Qprop2
+  <a class="reference internal nav-link" href="#naming-conventions">
+   2.1. Naming Conventions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#loader">
-   1.2. Loader
+  <a class="reference internal nav-link" href="#subroutine-arguments">
+   2.2. Subroutine Arguments
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#m-propeller">
-   1.3. m_Propeller
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#d-prop-data">
-   1.4. d_prop_data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#m-motor">
-   1.5. m_Motor
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#d-motor-data">
-   1.6. d_motor_data
+  <a class="reference internal nav-link" href="#array-dimensions">
+   2.3. Array Dimensions
   </a>
  </li>
 </ul>
@@ -395,106 +394,29 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="api">
-<h1><span class="section-number">1. </span>API<a class="headerlink" href="#api" title="Permalink to this headline">#</a></h1>
-<section id="qprop2">
-<h2><span class="section-number">1.1. </span>Qprop2<a class="headerlink" href="#qprop2" title="Permalink to this headline">#</a></h2>
-<dl>
-<dt class="sig sig-object f" id="f/qprop2">
-<em class="property"><span class="pre">program</span>&#160; </em><span class="sig-name descname"><span class="pre">qprop2</span></span><a class="headerlink" href="#f/qprop2" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-<p>The main entry point for the program.</p>
-</section>
-<section id="loader">
-<h2><span class="section-number">1.2. </span>Loader<a class="headerlink" href="#loader" title="Permalink to this headline">#</a></h2>
-</section>
-<section id="m-propeller">
-<h2><span class="section-number">1.3. </span>m_Propeller<a class="headerlink" href="#m-propeller" title="Permalink to this headline">#</a></h2>
-<p>The <em>Propeller</em> module handles loading geometric ans aerodynamic data for the
-selected propeller.</p>
-</section>
-<section id="d-prop-data">
-<h2><span class="section-number">1.4. </span>d_prop_data<a class="headerlink" href="#d-prop-data" title="Permalink to this headline">#</a></h2>
-<p>All Propeller input data is encapsulate din the <em>prop_data</em> module.</p>
-<p class="rubric">Module</p>
-<span class="target" id="f/prop_data"></span><p class="rubric">Description</p>
-<p>input propeller data store</p>
-<p class="rubric">Quick access</p>
-<dl class="field-list simple">
-<dt class="field-odd">Variables</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#f/prop_data/beta" title="f/prop_data/beta"><code class="xref f f-var docutils literal notranslate"><span class="pre">beta</span></code></a>, <a class="reference internal" href="#f/prop_data/chord" title="f/prop_data/chord"><code class="xref f f-var docutils literal notranslate"><span class="pre">chord</span></code></a>, <a class="reference internal" href="#f/prop_data/max_points" title="f/prop_data/max_points"><code class="xref f f-var docutils literal notranslate"><span class="pre">max_points</span></code></a>, <a class="reference internal" href="#f/prop_data/nblades" title="f/prop_data/nblades"><code class="xref f f-var docutils literal notranslate"><span class="pre">nblades</span></code></a>, <a class="reference internal" href="#f/prop_data/prop_name" title="f/prop_data/prop_name"><code class="xref f f-var docutils literal notranslate"><span class="pre">prop_name</span></code></a></p>
-</dd>
-</dl>
-<p class="rubric">Variables</p>
-<ul>
-<li><dl class="f variable">
-<dt class="sig sig-object f" id="f/prop_data/beta">
-<span class="sig-prename descclassname"><span class="pre">prop_data/</span></span><span class="sig-name descname"><span class="pre">beta</span></span> <span class="pre">(</span><span class="pre">51</span><span class="pre">)</span><em> <span class="pre">[</span></em><em><span class="pre">real</span></em><em><span class="pre">]</span></em><a class="headerlink" href="#f/prop_data/beta" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</li>
-<li><dl class="f variable">
-<dt class="sig sig-object f" id="f/prop_data/chord">
-<span class="sig-prename descclassname"><span class="pre">prop_data/</span></span><span class="sig-name descname"><span class="pre">chord</span></span> <span class="pre">(</span><span class="pre">51</span><span class="pre">)</span><em> <span class="pre">[</span></em><em><span class="pre">real</span></em><em><span class="pre">]</span></em><a class="headerlink" href="#f/prop_data/chord" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</li>
-<li><dl class="f variable">
-<dt class="sig sig-object f" id="f/prop_data/max_points">
-<span class="sig-prename descclassname"><span class="pre">prop_data/</span></span><span class="sig-name descname"><span class="pre">max_points</span></span><em> <span class="pre">[</span></em><em><span class="pre">integer</span></em><em><span class="pre">,</span></em><em><span class="pre">parameter=</span></em><span class="pre">51</span><em><span class="pre">]</span></em><a class="headerlink" href="#f/prop_data/max_points" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</li>
-<li><dl class="f variable">
-<dt class="sig sig-object f" id="f/prop_data/nblades">
-<span class="sig-prename descclassname"><span class="pre">prop_data/</span></span><span class="sig-name descname"><span class="pre">nblades</span></span><em> <span class="pre">[</span></em><em><span class="pre">integer</span></em><em><span class="pre">,</span></em><em><span class="pre">optional/default=2</span></em><em><span class="pre">]</span></em><a class="headerlink" href="#f/prop_data/nblades" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</li>
-<li><dl class="f variable">
-<dt class="sig sig-object f" id="f/prop_data/prop_name">
-<span class="sig-prename descclassname"><span class="pre">prop_data/</span></span><span class="sig-name descname"><span class="pre">prop_name</span></span><em> <span class="pre">[</span></em><em><span class="pre">character</span></em><em><span class="pre">,</span></em><em><span class="pre">optional/default='default_prop'</span></em><em><span class="pre">]</span></em><a class="headerlink" href="#f/prop_data/prop_name" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</li>
+  <section class="tex2jax_ignore mathjax_ignore" id="fortran-style-guide">
+<h1><span class="section-number">2. </span>Fortran Style Guide<a class="headerlink" href="#fortran-style-guide" title="Permalink to this headline">#</a></h1>
+<p>I am trying to write code that is easy to follow. That means I am partitioning the code into blocks that are small and focused on one task. The result is a large number of small modules. This is not necessarily a bad thing considering that this project is being developed for folks who are not seasoned programmers. Hopefully the names of routines and modules will help the reader figure out the purpose of each routine.</p>
+<p>This page will detail the coding conventions I am using.</p>
+<section id="naming-conventions">
+<h2><span class="section-number">2.1. </span>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">#</a></h2>
+<p>We will use two basic types of modules. One will contain code and internally defined variables. The other is data only, intended to be <strong>used</strong> only by modules that need access to those data items. We do need to pay attention to name collisions when multiple data modules are used in the same code module. Rather than use huge lists of arguments to subroutines in this code, we will pass data round using data only modules, focused on one aspect of the program only.</p>
+<ul class="simple">
+<li><p>code modules: file name begins with “m_”</p></li>
+<li><p>data modules: file name begins with “d_”</p></li>
 </ul>
 </section>
-<section id="m-motor">
-<h2><span class="section-number">1.5. </span>m_Motor<a class="headerlink" href="#m-motor" title="Permalink to this headline">#</a></h2>
+<section id="subroutine-arguments">
+<h2><span class="section-number">2.2. </span>Subroutine Arguments<a class="headerlink" href="#subroutine-arguments" title="Permalink to this headline">#</a></h2>
+<p>All arguments are written with an explict <strong>intent</strong>.</p>
+<p>Subroutine parameters that are arrays are declared in the subroutine as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="n">intent</span><span class="p">(</span><span class="ow">in</span><span class="p">)</span> <span class="p">::</span> <span class="n">param</span>
+</pre></div>
+</div>
 </section>
-<section id="d-motor-data">
-<h2><span class="section-number">1.6. </span>d_motor_data<a class="headerlink" href="#d-motor-data" title="Permalink to this headline">#</a></h2>
-<p class="rubric">Module</p>
-<span class="target" id="f/motor_data"></span><p class="rubric">Description</p>
-<p>input motor data store</p>
-<p class="rubric">Quick access</p>
-<dl class="field-list simple">
-<dt class="field-odd">Variables</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#f/motor_data/max_name_length" title="f/motor_data/max_name_length"><code class="xref f f-var docutils literal notranslate"><span class="pre">max_name_length</span></code></a>, <a class="reference internal" href="#f/motor_data/motor_name" title="f/motor_data/motor_name"><code class="xref f f-var docutils literal notranslate"><span class="pre">motor_name</span></code></a>, <a class="reference internal" href="#f/motor_data/motor_type" title="f/motor_data/motor_type"><code class="xref f f-var docutils literal notranslate"><span class="pre">motor_type</span></code></a></p>
-</dd>
-</dl>
-<p class="rubric">Variables</p>
-<ul>
-<li><dl class="f variable">
-<dt class="sig sig-object f" id="f/motor_data/max_name_length">
-<span class="sig-prename descclassname"><span class="pre">motor_data/</span></span><span class="sig-name descname"><span class="pre">max_name_length</span></span><em> <span class="pre">[</span></em><em><span class="pre">integer</span></em><em><span class="pre">,</span></em><em><span class="pre">parameter=</span></em><span class="pre">32</span><em><span class="pre">]</span></em><a class="headerlink" href="#f/motor_data/max_name_length" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</li>
-<li><dl class="f variable">
-<dt class="sig sig-object f" id="f/motor_data/motor_name">
-<span class="sig-prename descclassname"><span class="pre">motor_data/</span></span><span class="sig-name descname"><span class="pre">motor_name</span></span><em> <span class="pre">[</span></em><em><span class="pre">character</span></em><em><span class="pre">,</span></em><em><span class="pre">optional/default=&quot;default&quot;</span></em><em><span class="pre">]</span></em><a class="headerlink" href="#f/motor_data/motor_name" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</li>
-<li><dl class="f variable">
-<dt class="sig sig-object f" id="f/motor_data/motor_type">
-<span class="sig-prename descclassname"><span class="pre">motor_data/</span></span><span class="sig-name descname"><span class="pre">motor_type</span></span><em> <span class="pre">[</span></em><em><span class="pre">integer</span></em><em><span class="pre">,</span></em><em><span class="pre">optional/default=1</span></em><em><span class="pre">]</span></em><a class="headerlink" href="#f/motor_data/motor_type" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
-
-</li>
-</ul>
+<section id="array-dimensions">
+<h2><span class="section-number">2.3. </span>Array Dimensions<a class="headerlink" href="#array-dimensions" title="Permalink to this headline">#</a></h2>
+<p>All arrays with specified sizes will be declared using a named constant integer to make modifying that size easy if needed.</p>
 </section>
 </section>
 
@@ -511,7 +433,7 @@ selected propeller.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content"
+            path: "./appendix"
         },
         predefinedOutput: true
     }
@@ -525,17 +447,17 @@ selected propeller.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../introduction.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../content/api.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Qprop2 - Modern Fortran Implementation</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>API</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../appendix/fortran-style-guide.html" title="next page">
+    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Fortran Style Guide</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Bibliography</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

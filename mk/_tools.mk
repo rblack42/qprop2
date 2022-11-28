@@ -1,7 +1,8 @@
 FC = gfortran
-FLAGS = -O -std=f2018
+FLAGS = -O -std=f2018 -J _build
 BIN = bin
 
+all:	$(PROJNAME)
 
 %.o:    %.f
 	$(FC) -fdollar-ok -c $< -o $@
