@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2. Fortran Style Guide &#8212; QProp - f90 Edition</title>
+    <title>3. Fortran Style Guide &#8212; QProp - f90 Edition</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="3. Bibliography" href="../bibliography.html" />
-    <link rel="prev" title="1. API" href="../content/api.html" />
+    <link rel="next" title="4. Fortran Modules" href="fortran-modules.html" />
+    <link rel="prev" title="2. API" href="../content/api.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -115,18 +115,38 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
+  <a class="reference internal" href="../content/intro.html">
+   1. Math Magik QProp
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../content/api.html">
-   1. API
+   2. API
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Fortran Style Guide
+   3. Fortran Style Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fortran-modules.html">
+   4. Fortran Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modules/CommandLine.html">
+   5. Command-line interface (CommandLine.f90)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="wrapping.html">
+   6. Wrapping a module
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   3. Bibliography
+   7. Bibliography
   </a>
  </li>
 </ul>
@@ -337,17 +357,17 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#naming-conventions">
-   2.1. Naming Conventions
+   3.1. Naming Conventions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#subroutine-arguments">
-   2.2. Subroutine Arguments
+   3.2. Subroutine Arguments
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#array-dimensions">
-   2.3. Array Dimensions
+   3.3. Array Dimensions
   </a>
  </li>
 </ul>
@@ -371,17 +391,17 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#naming-conventions">
-   2.1. Naming Conventions
+   3.1. Naming Conventions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#subroutine-arguments">
-   2.2. Subroutine Arguments
+   3.2. Subroutine Arguments
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#array-dimensions">
-   2.3. Array Dimensions
+   3.3. Array Dimensions
   </a>
  </li>
 </ul>
@@ -395,11 +415,11 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="fortran-style-guide">
-<h1><span class="section-number">2. </span>Fortran Style Guide<a class="headerlink" href="#fortran-style-guide" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">3. </span>Fortran Style Guide<a class="headerlink" href="#fortran-style-guide" title="Permalink to this headline">#</a></h1>
 <p>I am trying to write code that is easy to follow. That means I am partitioning the code into blocks that are small and focused on one task. The result is a large number of small modules. This is not necessarily a bad thing considering that this project is being developed for folks who are not seasoned programmers. Hopefully the names of routines and modules will help the reader figure out the purpose of each routine.</p>
 <p>This page will detail the coding conventions I am using.</p>
 <section id="naming-conventions">
-<h2><span class="section-number">2.1. </span>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.1. </span>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">#</a></h2>
 <p>We will use two basic types of modules. One will contain code and internally defined variables. The other is data only, intended to be <strong>used</strong> only by modules that need access to those data items. We do need to pay attention to name collisions when multiple data modules are used in the same code module. Rather than use huge lists of arguments to subroutines in this code, we will pass data round using data only modules, focused on one aspect of the program only.</p>
 <ul class="simple">
 <li><p>code modules: file name begins with “m_”</p></li>
@@ -407,7 +427,7 @@ title="Print to PDF"
 </ul>
 </section>
 <section id="subroutine-arguments">
-<h2><span class="section-number">2.2. </span>Subroutine Arguments<a class="headerlink" href="#subroutine-arguments" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2. </span>Subroutine Arguments<a class="headerlink" href="#subroutine-arguments" title="Permalink to this headline">#</a></h2>
 <p>All arguments are written with an explict <strong>intent</strong>.</p>
 <p>Subroutine parameters that are arrays are declared in the subroutine as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="n">intent</span><span class="p">(</span><span class="ow">in</span><span class="p">)</span> <span class="p">::</span> <span class="n">param</span>
@@ -415,7 +435,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="array-dimensions">
-<h2><span class="section-number">2.3. </span>Array Dimensions<a class="headerlink" href="#array-dimensions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3. </span>Array Dimensions<a class="headerlink" href="#array-dimensions" title="Permalink to this headline">#</a></h2>
 <p>All arrays with specified sizes will be declared using a named constant integer to make modifying that size easy if needed.</p>
 </section>
 </section>
@@ -451,13 +471,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>API</p>
+            <p class="prev-next-title"><span class="section-number">2. </span>API</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../bibliography.html" title="next page">
+    <a class='right-next' id="next-link" href="fortran-modules.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Bibliography</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Fortran Modules</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

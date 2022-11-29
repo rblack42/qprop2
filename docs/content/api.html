@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1. API &#8212; QProp - f90 Edition</title>
+    <title>2. API &#8212; QProp - f90 Edition</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Fortran Style Guide" href="../appendix/fortran-style-guide.html" />
-    <link rel="prev" title="Qprop2 - Modern Fortran Implementation" href="../introduction.html" />
+    <link rel="next" title="3. Fortran Style Guide" href="../appendix/fortran-style-guide.html" />
+    <link rel="prev" title="1. Math Magik QProp" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -114,19 +114,39 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   1. Math Magik QProp
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. API
+   2. API
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../appendix/fortran-style-guide.html">
-   2. Fortran Style Guide
+   3. Fortran Style Guide
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/fortran-modules.html">
+   4. Fortran Modules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/modules/CommandLine.html">
+   5. Command-line interface (CommandLine.f90)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../appendix/wrapping.html">
+   6. Wrapping a module
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../bibliography.html">
-   3. Bibliography
+   7. Bibliography
   </a>
  </li>
 </ul>
@@ -308,32 +328,32 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#qprop2">
-   1.1. Qprop2
+   2.1. Qprop2
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#loader">
-   1.2. Loader
+   2.2. Loader
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#m-propeller">
-   1.3. m_Propeller
+   2.3. m_Propeller
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#d-prop-data">
-   1.4. d_prop_data
+   2.4. d_prop_data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#m-motor">
-   1.5. m_Motor
+   2.5. m_Motor
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#d-motor-data">
-   1.6. d_motor_data
+   2.6. d_motor_data
   </a>
  </li>
 </ul>
@@ -357,32 +377,32 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#qprop2">
-   1.1. Qprop2
+   2.1. Qprop2
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#loader">
-   1.2. Loader
+   2.2. Loader
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#m-propeller">
-   1.3. m_Propeller
+   2.3. m_Propeller
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#d-prop-data">
-   1.4. d_prop_data
+   2.4. d_prop_data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#m-motor">
-   1.5. m_Motor
+   2.5. m_Motor
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#d-motor-data">
-   1.6. d_motor_data
+   2.6. d_motor_data
   </a>
  </li>
 </ul>
@@ -396,9 +416,9 @@ title="Print to PDF"
               <div>
                 
   <section id="api">
-<h1><span class="section-number">1. </span>API<a class="headerlink" href="#api" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2. </span>API<a class="headerlink" href="#api" title="Permalink to this headline">#</a></h1>
 <section id="qprop2">
-<h2><span class="section-number">1.1. </span>Qprop2<a class="headerlink" href="#qprop2" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1. </span>Qprop2<a class="headerlink" href="#qprop2" title="Permalink to this headline">#</a></h2>
 <dl>
 <dt class="sig sig-object f" id="f/qprop2">
 <em class="property"><span class="pre">program</span>&#160; </em><span class="sig-name descname"><span class="pre">qprop2</span></span><a class="headerlink" href="#f/qprop2" title="Permalink to this definition">#</a></dt>
@@ -407,15 +427,15 @@ title="Print to PDF"
 <p>The main entry point for the program.</p>
 </section>
 <section id="loader">
-<h2><span class="section-number">1.2. </span>Loader<a class="headerlink" href="#loader" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2. </span>Loader<a class="headerlink" href="#loader" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="m-propeller">
-<h2><span class="section-number">1.3. </span>m_Propeller<a class="headerlink" href="#m-propeller" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.3. </span>m_Propeller<a class="headerlink" href="#m-propeller" title="Permalink to this headline">#</a></h2>
 <p>The <em>Propeller</em> module handles loading geometric ans aerodynamic data for the
 selected propeller.</p>
 </section>
 <section id="d-prop-data">
-<h2><span class="section-number">1.4. </span>d_prop_data<a class="headerlink" href="#d-prop-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4. </span>d_prop_data<a class="headerlink" href="#d-prop-data" title="Permalink to this headline">#</a></h2>
 <p>All Propeller input data is encapsulate din the <em>prop_data</em> module.</p>
 <p class="rubric">Module</p>
 <span class="target" id="f/prop_data"></span><p class="rubric">Description</p>
@@ -461,10 +481,10 @@ selected propeller.</p>
 </ul>
 </section>
 <section id="m-motor">
-<h2><span class="section-number">1.5. </span>m_Motor<a class="headerlink" href="#m-motor" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.5. </span>m_Motor<a class="headerlink" href="#m-motor" title="Permalink to this headline">#</a></h2>
 </section>
 <section id="d-motor-data">
-<h2><span class="section-number">1.6. </span>d_motor_data<a class="headerlink" href="#d-motor-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.6. </span>d_motor_data<a class="headerlink" href="#d-motor-data" title="Permalink to this headline">#</a></h2>
 <p class="rubric">Module</p>
 <span class="target" id="f/motor_data"></span><p class="rubric">Description</p>
 <p>input motor data store</p>
@@ -525,17 +545,17 @@ selected propeller.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../introduction.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Qprop2 - Modern Fortran Implementation</p>
+            <p class="prev-next-title"><span class="section-number">1. </span>Math Magik QProp</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../appendix/fortran-style-guide.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Fortran Style Guide</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Fortran Style Guide</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

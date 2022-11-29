@@ -6,6 +6,10 @@ root: introduction
 options:
   numbered: true
 chapters:
+  - file: content/intro
   - file: content/api
   - file: appendix/fortran-style-guide
+  - file: appendix/fortran-modules
+  - file: appendix/modules/CommandLine
+  - file: appendix/wrapping
   - file: bibliography
